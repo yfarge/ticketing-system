@@ -13,6 +13,8 @@ import {
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+
 interface UserItemProps {
   session: Session | null;
 }
@@ -22,7 +24,15 @@ export default function UserItem({ session }: UserItemProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">{session.user.name}</Button>
+        <Button variant="outline" className="h-14">
+          <div className="flex items-center justify-center gap-2">
+            <Avatar className="h-8 w-8">
+              <AvatarImage src={session.user.image ?? undefined} />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            {session.user.name}
+          </div>
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>

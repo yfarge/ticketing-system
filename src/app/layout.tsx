@@ -22,7 +22,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en">
       <body
@@ -32,9 +31,9 @@ export default function RootLayout({
         )}
       >
         <TRPCReactProvider>
-          <div className="lg:grid lg:grid-cols-[15rem_auto]">
+          <div className="flex">
             <Sidebar />
-            {children}
+            <div className="h-full w-full">{children}</div>
           </div>
         </TRPCReactProvider>
       </body>
