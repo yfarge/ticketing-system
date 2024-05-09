@@ -3,7 +3,6 @@ import "~/styles/globals.css";
 import { Inter } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
-import Sidebar from "./_components/Sidebar";
 import { cn } from "~/lib/utils";
 
 const inter = Inter({
@@ -30,12 +29,7 @@ export default function RootLayout({
           inter.variable,
         )}
       >
-        <TRPCReactProvider>
-          <div className="flex">
-            <Sidebar />
-            <div className="h-full w-full">{children}</div>
-          </div>
-        </TRPCReactProvider>
+        <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
   );
