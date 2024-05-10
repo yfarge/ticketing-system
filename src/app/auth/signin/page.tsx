@@ -21,7 +21,10 @@ export default function SignIn() {
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <Button variant="default" onClick={() => signIn("auth0")}>
+          <Button
+            variant="default"
+            onClick={() => signIn("auth0", { callbackUrl: "/" })}
+          >
             Log In
           </Button>
         </CardFooter>
