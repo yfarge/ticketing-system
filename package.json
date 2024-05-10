@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "deploy": "next build & drizzle-kit push:pg",
     "build": "next build",
     "db:push": "drizzle-kit push:pg",
     "db:studio": "drizzle-kit studio",
